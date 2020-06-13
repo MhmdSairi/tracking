@@ -25,10 +25,7 @@ country_list.forEach( country => {
 	if(country.code == country_code) {
 		user_country = country.name;
 	}
-})
-
-console.log(user_country)
-
+});
 /* ---------------------------------------------- */
 /*                API URL AND KEY                 */
 /* ---------------------------------------------- */
@@ -84,11 +81,7 @@ function updateStats() {
 	new_deaths_element.innerHTML = `+${last_entry.new_deaths || 0}`;
 	
 	last_update_element.innerHTML = last_entry.record_date;
-}
-
-// create last update format
-moment.parseZone()
-
+};
 
 // create chart
 
