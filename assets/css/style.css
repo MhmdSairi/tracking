@@ -1,0 +1,814 @@
+@import "app-bar.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* css inisialisasi awal agar kita memegang kendali penuh stylenya */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', 'Poppins';
+    background-color: #f2f2f2;
+    font-size: 16px;
+    color: #222;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+}
+
+.red {
+    color: #FA8072;
+}
+
+.pink {
+    color: #ff2a75;
+}
+
+.jumbotron {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../img/background/bg-header.png');
+    background-size: cover;
+    min-height: 400px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.jumbotron p {
+    font-weight: 500;
+    font-size: 40px;
+    padding-top: 10%;
+}
+
+/* ================ navbar ============== */
+
+/* header ketika tidak scroll */
+.navbar-area {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 10px 0;
+    box-shadow: 0 10px 30px 0 rgba(245, 183, 177, 0.8);
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.navbar-brand img {
+    height: 52px;
+    width: auto;
+    display: block;
+    transition: all 0.3s ease-out;
+}
+
+/* navbar ketika discroll*/
+.navbar-area.scroll-on {
+    box-shadow: 0 5px 10px 0 rgba(245, 183, 177, 0.8);
+    padding: 5px 0;
+    transition: all 0.3s ease-out;
+}
+
+.navbar-area.scroll-on .navbar-brand img {
+    height: 30px;
+    transition: all 0.3s ease-out;
+}
+
+/* mengatur navbar */
+.navigation-wrap {
+    background-color: #f2f3f4;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-out;
+}
+
+/* pengaturan navbar for mobile */
+.navbar-toggler {
+    float: right;
+    border: none;
+    padding-right: 0;
+}
+
+.navbar-toggler:active,
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+    width: 24px;
+    height: 17px;
+    background-image: none;
+    position: relative;
+    border-bottom: 1px solid #000;
+    transition: all 300ms;
+}
+
+.navbar-light .navbar-toggler-icon:after,
+.navbar-light .navbar-toggler-icon:before {
+    width: 24px;
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    content: '';
+    z-index: 2;
+    transition: all 300ms linear;
+}
+
+.navbar-light .navbar-toggler-icon:after {
+    top: 8px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+    transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+    transform: translateY(8px) rotate(-45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    border-color: transparent;
+}
+
+.nav-link {
+    color: #212121 !important;
+    font-weight: 500;
+    transition: all 200ms linear;
+    position: relative;
+    padding: 5px 0 !important;
+    display: inline-block;
+}
+
+.nav-item:hover .nav-link {
+    color: #5dade2 !important;
+}
+
+.nav-item.active .nav-link {
+    color: #3498db !important;
+}
+
+
+.nav-item:hover:after {
+    bottom: 0;
+    opacity: 1;
+}
+
+.nav-item.active:hover:after {
+    opacity: 0;
+}
+
+.nav-item {
+    position: relative;
+    transition: all 200ms linear;
+}
+
+/* CSS Bagian World Case Stat */
+.stats {
+    padding-top: 8%;
+    width: 100%;
+    height: 900px;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(../img/bg.jpg); */
+    /* background-size: cover; */
+    background: #eacda3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d6ae7b, #eacda3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+/* -------- LATEST REPORT -------- */
+.latest-report {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+
+    color: #000000;
+}
+
+.country,
+.total-cases,
+.recovered,
+.deaths {
+    height: 100px;
+}
+
+.name {
+    font-size: 2.2em;
+    color: #000000;
+    font-weight: bold;
+}
+
+.change-country {
+    cursor: pointer;
+}
+
+.title {
+    font-size: 1.3em;
+}
+
+.total-cases .value {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.recovered .value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #009688;
+}
+
+.recovered .new-value {
+    font-size: 1.3em;
+    color: #009688;
+}
+
+.deaths .value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #f44336;
+}
+
+.deaths .new-value {
+    font-size: 1.3em;
+    color: #f44336;
+}
+
+/* -------- CHART -------- */
+
+.chart {
+    width: 80%;
+    height: 70vh;
+    min-height: 500px;
+
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+/* -------- SEARCH COUNTRY -------- */
+
+.search-country {
+    position: relative;
+    top: 10px;
+}
+
+.search-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 400px;
+    height: 30px;
+
+    z-index: 1;
+    background-color: #111111;
+}
+
+.search-box input {
+    width: 360px;
+    height: 25px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    padding-left: 15px;
+    font-size: 1.1em;
+}
+
+.search-box img {
+    width: 20px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.country-list {
+    display: flex;
+
+
+    position: absolute;
+    top: 30px;
+
+    width: 400px;
+    height: 300px;
+    background-color: #111111;
+    opacity: 0.9;
+    overflow-y: scroll;
+}
+
+.country-list ul {
+    width: 100%;
+}
+
+.country-list ul li {
+    list-style: none;
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+}
+
+.country-list ul li:hover {
+    border-left: 1px solid #fff;
+}
+
+
+
+/* SCROLL BAR */
+.country-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.country-list::-webkit-scrollbar-track {
+    background: #111;
+}
+
+/* Handle */
+.country-list::-webkit-scrollbar-thumb {
+    background: #f1f1f1;
+}
+
+/* Handle on hover */
+.country-list::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+}
+
+/* CSS Content - Definition */
+#definition {
+    padding-top: 10%;
+}
+
+.definition {
+    padding: 0;
+    margin: 0;
+}
+
+.definition p {
+    text-align: justify;
+}
+
+#character {
+    margin-top: -21%;
+    width: 50%;
+    float: right;
+}
+
+
+/* CSS Symptom - Grid */
+#symptoms {
+    padding-top: 5%;
+}
+
+
+.area-symptomps {
+    padding: 0;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grid-container>div {
+    text-align: center;
+    font-size: 20px;
+}
+
+.grid-container>div p {
+    text-align: center;
+    font-size: 17px;
+}
+
+.item {
+    width: 100%;
+    min-height: 300px;
+}
+
+.item2 {
+    grid-row: span 2;
+}
+
+#symptoms .item2 img {
+    padding-top: 10%;
+}
+
+.card.symptoms {
+    background-color: transparent;
+    border: none;
+    text-align: justify to center;
+}
+
+.symptoms .card-header {
+    background-color: transparent;
+    border: none;
+}
+
+/* carousel css */
+.carousel-cell {
+    width: 66%;
+    height: 300px;
+    margin-right: 10px;
+    background: #fadbd8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+    font-size: 2em;
+    border-bottom: 5px solid rgba(245, 203, 167, 0.6);
+    border-right: 5px solid rgba(245, 203, 167, 0.6);
+    box-sizing: border-box !important;
+}
+
+/* cell number */
+.carousel-cell:before {
+    display: block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+
+.area-prevention {
+    height: inherit;
+    padding: 30px;
+}
+
+.area-prevention img {
+    max-width: 80%;
+    position: absolute;
+    top: 10%;
+}
+
+.area-prevention p {
+    max-width: 80%;
+    position: absolute;
+    top: 35%;
+    text-align: center;
+}
+
+/*======================= footer ==================*/
+
+.footer-top {
+    background-color: #808b96;
+    display: -moz-box;
+    height: 100%;
+
+}
+
+.footer-about {
+    left: 2%;
+    text-align: justify;
+    color: #ebedef;
+}
+
+.footer-about h1 {
+    font-family: 'Pacifico', cursive;
+    padding-bottom: 5%;
+}
+
+.social-media-area {
+    text-align: center;
+    padding-top: 5%;
+}
+
+.footer-copyright {
+    padding: 15px 0 17px 0;
+    background: #444;
+    color: #aaa;
+    justify-content: center;
+}
+
+.footer-copyright a {
+    color: #ffffff;
+}
+
+.footer-copyright a:hover,
+.footer-copyright a:focus {
+    color: #aaa;
+}
+
+
+/* mengatur bagian body social media */
+.social-area {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 36px;
+    perspective: 300px;
+    font-size: 14px;
+    margin: 8px;
+}
+
+.social-area .social-3D {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.333s;
+    transform: translateZ(-18px);
+
+}
+
+/* untuk mengatur perpindahan dan style boxnya */
+.social-area .social-3D .social-name,
+.social-area .social-3D .idSocial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    color: #ffffff;
+    transition: background 0.333s;
+    border-radius: 5px;
+}
+
+
+/* untuk menagatur perpindahan efek depan dan belakang */
+.social-area .social-3D .social-name {
+    transform: rotateX(0deg) translateZ(18px);
+}
+
+.social-area .social-3D .idSocial {
+    transform: rotateX(-90deg) translateZ(18px);
+}
+
+.social-area:hover .social-3D {
+    transform: translateZ(-18px) rotateX(90deg);
+}
+
+/* pengaturan style facebook */
+.social-area.facebook .social-3D .social-name,
+.social-area.facebook .social-3D .back {
+    background: #3b5998;
+}
+
+.social-area.facebook .social-3D .idSocial {
+    background: #4e71ba;
+}
+
+.social-area.facebook:hover .social-3D .idSocial {
+    background: #3b5998;
+}
+
+.social-area.facebook:hover .social-3D .social-name {
+    background: #2f477a;
+}
+
+/* pemngaturan style instagram */
+.social-area.instagram .social-3D .social-name,
+.social-area.instagram .social-3D .back {
+    background: #c13584;
+}
+
+.social-area.instagram .social-3D .idSocial {
+    background: #833ab4;
+}
+
+.social-area.instagram:hover .social-3D .idSocial {
+    background: #e1306c;
+}
+
+.social-area.instagram:hover .social-3D .social-name {
+    background: #fd1d1d;
+}
+
+/* pengaturan style twitter */
+.social-area.twitter .social-3D .social-name,
+.social-area.twitter .social-3D .back {
+    background: #1da1f2;
+}
+
+.social-area.twitter .social-3D .idSocial {
+    background: #AAB8C2;
+}
+
+.social-area.twitter:hover .social-3D .idSocial {
+    background: #1da1f2;
+}
+
+.social-area.twitter:hover .social-3D .social-name {
+    background: #e1e8ed;
+}
+
+/* pengaturan style github */
+.social-area.github .social-3D .social-name,
+.social-area.github .social-3D .back {
+    background: #333;
+}
+
+.social-area.github .social-3D .idSocial {
+    background: #f5f5f5;
+}
+
+.social-area.github:hover .social-3D .idSocial {
+    background: #333;
+}
+
+.social-area.github:hover .social-3D .social-name {
+    background: #fafafa;
+}
+
+/* style pengaturan line */
+.social-area.line .social-3D .social-name,
+.social-area.line .social-3D .back {
+    background: #00c300;
+}
+
+.social-area.line .social-3D .idSocial {
+    background: #f5f5f5;
+}
+
+.social-area.line:hover .social-3D .idSocial {
+    background: #00c300;
+}
+
+.social-area.line:hover .social-3D .social-name {
+    background: #fafafa;
+}
+
+/* style pengaturan linkedIn */
+.social-area.linked .social-3D .social-name,
+.social-area.linked .social-3D .back {
+    background: #2867b2;
+}
+
+.social-area.linked .social-3D .idSocial {
+    background: #FFFFFF;
+}
+
+.social-area.linked:hover .social-3D .idSocial {
+    background: #2867b2;
+}
+
+.social-area.linked:hover .social-3D .social-name {
+    background: #ffffff;
+}
+
+
+
+
+
+
+
+
+/* =-============== Tampilan Mobile ====================== */
+
+/* tampilan tablet or landscape */
+@media (max-width: 750px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    .nav-item:after {
+        display: none;
+    }
+
+    .nav-item::before {
+        position: absolute;
+        display: block;
+        top: 15px;
+        left: 0;
+        width: 11px;
+        height: 1px;
+        content: "";
+        border: none;
+        background-color: #000;
+    }
+
+    /* .header-title {
+		font-size: 38px;
+		font-weight: 700;
+	} */
+
+
+    .card {
+        display: flexbox;
+        flex-direction: column;
+    }
+
+    .card-deck {
+        display: flexbox;
+        flex-direction: column;
+    }
+
+    #definition img {
+        padding-top: 20%;
+        padding-right: 30%;
+        width: 70%;
+    }
+
+    .item2 img {
+        display: none;
+    }
+
+    .symptoms .card-body p {
+        text-align: justify to center;
+    }
+
+    #character {
+        width: 30%;
+    }
+
+    .area-prevention p {
+        font-size: 20px;
+    }
+
+    .area-prevention img {
+        width: 30%;
+        left: 30%;
+    }
+
+    .area-prevention p.wash {
+        font-size: 15px;
+    }
+
+    .stats {
+        height: 1000px;
+    }
+
+    .latest-report {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .country,
+    .total-cases,
+    .recovered,
+    .deaths {
+        /* height: 100px; */
+        margin: 20px;
+    }
+
+}
+
+
+/* tampilan hp */
+@media (max-width: 600px) {
+    .header-title {
+        padding-top: 80%;
+        font-size: 38px;
+        font-weight: 700;
+    }
+
+    .card .card-body p {
+        font-size: 20px !important;
+    }
+
+    #character {
+        width: 70%;
+        float: center;
+        padding-top: 20%;
+        padding-right: 35%;
+    }
+
+    .area-prevention p {
+        font-size: 20px;
+    }
+
+    .area-prevention img {
+        padding-top: 30%;
+    }
+
+    .area-prevention p.wash {
+        font-size: 15px;
+    }
+
+    .latest-report {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .country,
+    .total-cases,
+    .recovered,
+    .deaths {
+        /* height: 100px; */
+        margin: 20px;
+    }
+}

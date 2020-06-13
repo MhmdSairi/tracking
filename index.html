@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Persebaran COVID-19 di Indonesia</title>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/035d1f15ab.js" crossorigin="anonymous"></script>
+
+    <!-- wow animation library -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!-- flickity package for slider -->
+    <link rel="stylesheet" href="assets/css/flickity.css">
+
+
+</head>
+<body>
+    <!-- navbar -->
+    <header class="header-area">
+        <div class="navigation-wrap navbar-area start-style">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-md navbar-light">
+                            <a class="navbar-brand" href=""><img src="assets/img/logo/logo-brand-green.png" alt=""></a>	
+                            
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto py-4 py-md-0">
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+                                        <a class="nav-link" href="#">Home</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="#definition">Definition</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="#symptoms">Symptoms</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="#prevention">Prevention</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>		
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- HEADER TITLE -->
+        <!-- <section id="case-world">
+            <div class="jumbotron">
+                <p class="text getwrite" data-period="2000" data-type='[ "Portal Monitoring COVID-19 di Indonesia"]'></p>
+                <span class="TextWrite"></span> 
+            </div>
+        </section> -->
+    </header>
+
+    <!-- world case stat -->
+    <main>
+        <div class="stats">
+            <div class="latest-report">
+                <div class="country">
+                    <div class="name">Loading...</div>
+                    <!-- <div class="change-country">change</div> -->
+                    <div class="last-update">Last Update:
+                        <div class="updateIn"></div>
+                    </div>
+                    <div class="search-country hide">
+                        <!-- <div class="search-box">
+                            <input type="text" id="search-input" placeholder="Search Country">
+                            <img class="close" src="assets/img/close.svg" alt="">
+                        </div> -->
+                        <!-- <div class="country-list">
+                        </div> -->
+                    </div>
+                </div>
+                <div class="total-cases">
+                    <div class="title">Total Cases</div>
+                    <div class="value">0</div>
+                    <div class="new-value">+0</div>
+                </div>
+                <div class="recovered">
+                    <div class="title">Recovered</div>
+                    <div class="value">0</div>
+                    <div class="new-value">+0</div>
+                </div>
+                <div class="deaths">
+                    <div class="title">Deaths</div>
+                    <div class="value">0</div>
+                    <div class="new-value">+0</div>
+                </div>
+            </div>
+            <div class="chart">
+                <canvas id="axes_line_chart"></canvas>
+            </div>
+        </div>
+    </main>
+    
+    <main>
+        <!-- article bagian definisi -->
+        <article id="definition">
+            <div class="container pb-5">
+                <div class="row">
+                    <div class="col-md-12 title-project wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <h4 class="sub-heading">COVID - 19</h4>
+                        <h1 class="heading pink"><span class="pink">What </span> is it ?</h1>
+                    </div>
+                </div>
+                <div class="container-fluid pt-5 pb-5">
+                    <div class="row">
+                        <div class="definition col-lg-6 col-md-12">
+                            <div class="about-tittle wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                                <p>
+                                    Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+                                    Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness
+                                    and recover without requiring special treatment.  Older people, and those with underlying medical
+                                    problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more
+                                    likely to develop serious illness.
+                                </p>
+                                <p>Source : WHO</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="about-image text-center wow fadeInRightBig justify-content-end" data-wow-duration="1s" data-wow-delay="0.5s">
+                                <img id="character" src="assets/img/character/people-02.png" alt="about">
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </article>
+
+        <!-- article bagian symptoms -->
+        <article id="symptoms">
+            <div class="container pt-5">
+                <div class="row ">
+                    <div class="col-md-12 title-project wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <h4 class="sub-heading">Symptoms</h4>
+                        <h1 class="heading pink"><span class="pink">What </span> are the Symptoms ?</h1>
+                    </div>
+                </div>
+                <div class="container-fluid area-symptomps justify-content-center pt-5 pb-5">
+                    <div class="grid-container">
+                        <div class="item1 col-sm-12">
+                            <div class="card symptoms rounded mb-3 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="max-width: 15rem;">
+                                <div class="card-header border-bottom border-danger">Fever</div>
+                                <div class="card-body text-dark">
+                                    <p>Body temperature above 38 degrees Celcius</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item item2 wow fadeInUpBig col-md-12" data-wow-duration="1s" data-wow-delay="0.5s">
+                            <img src="assets/img/character/people-01.png" style="max-width: 70%;">
+                        </div>
+                        <div class="item3">
+                            <div class="card symptoms rounded mb-3 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="max-width: 15rem;">
+                                <div class="card-header border-bottom border-danger">Headache</div>
+                                <div class="card-body text-dark">
+                                    <p>8% of Covid-19 patients report Headaches.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item4">
+                            <div class="card symptoms rounded mb-3 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="max-width: 15rem;">
+                                <div class="card-header border-bottom border-danger">Dry Cough</div>
+                                <div class="card-body text-dark">
+                                    <p>67.7% of Covid-19 showed symptoms of Dry Cough</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item5">
+                            <div class="card symptoms rounded mb-3 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="max-width: 15rem;">
+                                <div class="card-header border-bottom border-danger">Tiredness</div>
+                                <div class="card-body text-dark">
+                                    <p>40% of nearly 6,000 Covid-19 patients experience fatigue</p>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>  
+            </div>
+        </article>
+
+        <!-- article bagian prevention -->
+        <article id="prevention">
+            <div class="container pt-5 pb-5">
+                <div class="row pt-5 pb-5">
+                    <div class="col-md-12 title-project wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <h4 class="sub-heading">Prevention</h4>
+                        <h1 class="heading pink"><span class="pink">How </span>to prevent it ?</h1>
+                    </div>
+                </div>
+                <div class="carousel" data-flickity='{ "wrapAround": true }'>
+                    <div class="carousel-cell">
+                        <div class="row area-prevention">
+                            <div class="col col-lg-8 col-md-6 col-sm-12 text-uppercase">
+                                <p style="left: 20%;">
+                                   Stay at home
+                                </p>
+                            </div>
+                            <div class="col col-lg-4 col-md-6 col-sm-12 ">
+                                <img src="assets/img/character/stay-at-home.png" alt="stay">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-cell">
+                        <div class="row area-prevention">
+                            <div class="col col-lg-8 col-md-6 col-sm-12 text-uppercase">
+                                <p class="wash">
+                                    Wash your hand frequently
+                                </p>
+                            </div>
+                            <div class="col col-lg-4 col-md-6 col-sm-12">
+                                <img src="assets/img/character/wash-hand.png" alt="CuciTangan" style="max-width: 85%;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-cell">
+                        <div class="row area-prevention">
+                            <div class="col col-lg-8 col-md-6 col-sm-12 text-uppercase">
+                                <p class="wash">
+                                    Wear a Mask when you leave the home
+                                </p>
+                            </div>
+                            <div class="col col-lg-4 col-md-6 col-sm-12">
+                                <img src="assets/img/character/wear-mask.png" alt="Masker">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-cell">
+                        <div class="row area-prevention">
+                            <div class="col col-lg-8 col-md-6 col-sm-12 text-uppercase">
+                                <p class="wash" style="top : 20%">
+                                    Don't touch  your eyes, nose or mouth with unwashed hand
+                                </p>
+                            </div>
+                            <div class="col col-lg-4 col-md-6 col-sm-12">
+                                <img src="assets/img/character/dont-touch.png" alt="unwash">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-cell">
+                        <div class="row area-prevention">
+                            <div class="col col-lg-8 col-md-6 col-sm-12 text-uppercase">
+                                <p class="wash">
+                                   Avoid contact with sick people
+                                </p>
+                            </div>
+                            <div class="col col-lg-4 col-md-6 col-sm-12">
+                                <img src="assets/img/character/jaga-jarak.png" alt="jaga jarak">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+<footer>
+    <div class="container-fluid pt-5 ">
+        <div class="row footer-top pt-5 pb-4">
+            <div class="col col-md-6 col-sm-12 footer-about">
+                <h1>Thazka Al Afkar</h1>
+                <p>
+                    Front-End Programmer Freelancers who are currently studying ReactJS. Graduated from Pasundan University majoring in Informatics Engineering.
+                    Has a hobby of reading books, watching movies, traveling, and caring for cats (currently raising 3 cats). Have aspirations to become a Senior
+                    Front-End Programmer and want to work in Japan. He currently has an N4 level Japanese certificate and is fluent in English. 
+                </p>
+            </div>
+            <div class="col col-md-6 col-sm-12 footer-social-media justify-content-center">
+                <div class="social-media-area">
+                    <!-- facebook -->
+                    <a href="https://www.facebook.com/thazka.l.neverwalkalone" class="social-area facebook">
+                        <div class="social-3D">
+                            <div class="social-name">
+                                Facebook
+                            </div>
+                            <div class="idSocial">
+                                Thazka Al Afkar
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- instagram -->
+                    <a href="https://www.instagram.com/thazka_/" class="social-area instagram">
+                        <div class="social-3D">
+                            <div class="social-name">
+                                Instagram
+                            </div>
+                            <div class="idSocial">
+                                thazka_
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- twitter -->
+                    <a href="https://twitter.com/thazka_" class="social-area twitter">
+                        <div class="social-3D">
+                            <div class="social-name">
+                                Twitter
+                            </div>
+                            <div class="idSocial">
+                                thazka_
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- github -->
+                    <a href="https://github.com/thazka/" class="social-area github">
+                        <div class="social-3D">
+                            <div class="social-name">
+                                Github
+                            </div>
+                            <div class="idSocial">
+                                thazka
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- line -->
+                    <a href="http://line.me/ti/p/~thazka_" class="social-area line">
+                        <div class="social-3D">
+                            <div class="social-name">
+                                Line
+                            </div>
+                            <div class="idSocial">
+                                thazka_
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Linked in -->
+                    <a href="https://www.linkedin.com/in/thazka/" class="social-area linked">
+                        <div class="social-3D">
+                            <div class="social-name">
+                                LinkedIn
+                            </div>
+                            <div class="idSocial">
+                                thazka
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row footer-copyright">
+            &copy; Developed By&nbsp<a href="http://instagram/thazka_">Thazka Al Afkar</a>
+        </div>
+    </div>
+</footer>
+    
+    <!-- script yang dibutuhkan untuk style -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- script date format -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+
+    <!-- script api -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <script src="assets/js/countries.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <!-- activate wow effect -->
+    <script src="assets/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <!-- my javascript -->
+    <script src="assets/js/scroll-navbar.js" ></script>
+
+    <!-- my typescript -->
+    <script src="assets/js/type-write.js"></script>
+
+    <!-- activate library flickity js -->
+    <script src="assets/js/flickity.pkgd.min.js"></script>
+</body>
+</html>
